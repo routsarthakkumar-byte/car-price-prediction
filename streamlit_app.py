@@ -32,46 +32,23 @@ on historical car sales data.
 st.sidebar.success("Model Accuracy: 90% R²")
 
 # Inputs
-
 col1, col2 = st.columns(2)
 
 with col1:
-    km_driven = st.number_input(
-        "Kilometers Driven",
-        min_value=0,
-        value=50000
-    )
+    km_driven = st.number_input("Kilometers Driven", min_value=0, value=50000)
 
-    fuel = st.selectbox(
-        "Fuel Type",
-        ["Diesel", "Electric", "LPG", "Petrol"]
-    )
+    fuel = st.selectbox("Fuel Type", ["Diesel", "Electric", "LPG", "Petrol"])
 
-    transmission = st.selectbox(
-        "Transmission",
-        ["Manual", "Automatic"]
-    )
+    transmission = st.selectbox("Transmission", ["Manual", "Automatic"])
 
 with col2:
-    car_age = st.number_input(
-        "Car Age",
-        min_value=0,
-        value=5
-    )
+    car_age = st.number_input("Car Age", min_value=0, value=5)
 
-    seller_type = st.selectbox(
-        "Seller Type",
-        ["Individual", "Trustmark Dealer"]
-    )
+    seller_type = st.selectbox("Seller Type", ["Individual", "Trustmark Dealer"])
 
     owner = st.selectbox(
         "Owner Type",
-        [
-            "Second Owner",
-            "Third Owner",
-            "Fourth & Above Owner",
-            "Test Drive Car"
-        ]
+        ["Second Owner", "Third Owner", "Fourth & Above Owner", "Test Drive Car"]
     )
 
 models = [
@@ -86,11 +63,9 @@ models = [
     "Other"
 ]
 
-selected_model = st.selectbox(
-    "Car Model",
-    models
-)
+selected_model = st.selectbox("Car Model", models)
 
+# 🔥 Prediction Button
 if st.button("Predict Price"):
 
     input_data = pd.DataFrame(
@@ -126,15 +101,14 @@ if st.button("Predict Price"):
     if model_col in input_data.columns:
         input_data[model_col] = 1
 
+    # Prediction
     prediction_log = model.predict(input_data)
-
     prediction = np.expm1(prediction_log)
 
-    prediction = np.expm1(prediction_log)
+    # 🔮 UI Output (Premium Card)
+    st.markdown("## 🔮 Prediction Result")
 
-st.markdown("## 🔮 Prediction Result")
-
-st.metric(
-    label="🚗 Estimated Car Price",
-    value=f"₹ {prediction[0]:,.0f}"
-)
+    st.metric(
+        label="🚗 Estimated Car Price",
+        value=f"₹ {prediction[0]:,.0f}"
+    )
