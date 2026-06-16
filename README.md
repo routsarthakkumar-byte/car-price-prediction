@@ -60,8 +60,11 @@ Prediction Result
 Prediction Output Screenshot
 
 🚀 Future Improvements
+
 Hyperparameter tuning
+
 Trying advanced regression models like XGBoost
 
 👨‍💻 Developer
-Sarthak Kumar ROut
+
+Sarthak Kumar Rout
