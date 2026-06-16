@@ -21,6 +21,16 @@ Predict the resale value of your car using Machine Learning.
 Built with Streamlit and Scikit-Learn.
 """)
 
+st.sidebar.title("ℹ️ About")
+
+st.sidebar.info("""
+This application predicts used car prices
+using a Machine Learning model trained
+on historical car sales data.
+""")
+
+st.sidebar.success("Model Accuracy: 77% R²")
+
 # Inputs
 km_driven = st.number_input(
     "Kilometers Driven",
