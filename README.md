@@ -1,22 +1,61 @@
-# Car Price Prediction
+🚗 Car Price Prediction System
 
-A Machine Learning web application built using:
+A machine learning project that predicts the resale value of a used car based on its features like age, fuel type, transmission, and more.
 
-- Python
-- Scikit-Learn
-- Random Forest Regressor
-- Streamlit
+🌐 Live Demo
 
-## Features
+https://car-price-prediction-rraqeyr2ednytb2q2zkepc.streamlit.app/
 
-- Predicts used car selling price
-- User-friendly web interface
-- Deployed on Streamlit Cloud
+✨ Features
+Data preprocessing and feature engineering
+One-hot encoding of categorical variables
+Machine Learning regression model
+Real-time price prediction
+Interactive Streamlit web app
+Random-Forest Regressor
+🛠️ Tech Stack
+Python
+Pandas
+NumPy
+Scikit-learn
+Streamlit
+Pickle
+📊 Dataset
 
-## Model Accuracy
+Used Car Price Dataset (Kaggle / Online Used Car Listings Dataset)
 
-R² Score: ~0.90
+🧠 Features Used
+Input Features:
+Kilometers Driven
+Car Age
+Fuel Type
+Transmission Type
+Seller Type
+Owner Type
+Car Model
+Encoded Features:
+km_driven
+car_age
+fuel_Diesel, fuel_Electric, fuel_LPG, fuel_Petrol
+transmission_Manual, transmission_Automatic
+seller_type_Individual, seller_type_Trustmark Dealer
+owner_Second Owner, Third Owner, Fourth & Above Owner, Test Drive Car
+model_Maruti Swift, Hyundai i20, Hyundai Verna, Honda City, Toyota Innova, Mahindra XUV500, Ford EcoSport, Renault Duster, Other
+📈 Model Performance
 
-## Live Demo
+Achieved good accuracy using a Regression-based Machine Learning model trained on historical car sales data.
 
-[Your Streamlit URL Here]
+🖥️ Application Preview
+Home Page
+
+Home Page Screenshot
+
+Prediction Result
+
+Prediction Output Screenshot
+
+🚀 Future Improvements
+Hyperparameter tuning
+Trying advanced regression models like XGBoost
+👨‍💻 Developer
+Sarthak Kumar ROut
