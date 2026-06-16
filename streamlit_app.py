@@ -9,7 +9,6 @@ st.set_page_config(
     layout="wide"
 )
 
-# Load model and columns
 model = pickle.load(open("car_price_model.pkl", "rb"))
 model_columns = pickle.load(open("model_columns.pkl", "rb"))
 
@@ -21,7 +20,6 @@ Predict the resale value of your car using Machine Learning.
 Built with Streamlit and Scikit-Learn.
 """)
 
-# Sidebar
 st.sidebar.title("ℹ️ About")
 
 st.sidebar.info("""
@@ -32,10 +30,9 @@ on historical car sales data.
 
 st.sidebar.success("Model Accuracy: 90% R²")
 
-# 🔥 FEATURES SECTION (NEW ADDITION)
-st.markdown("## 📊 Features Used")
+st.sidebar.markdown("### 📊 Features Used")
 
-st.markdown("""
+st.sidebar.markdown("""
 - Kilometers Driven  
 - Car Age  
 - Fuel Type  
@@ -45,20 +42,18 @@ st.markdown("""
 - Car Model  
 """)
 
-st.markdown("### 🧠 Encoded Model Features")
-st.markdown("""
+st.sidebar.markdown("### 🧠 Encoded Features")
+
+st.sidebar.markdown("""
 - km_driven  
 - car_age  
 - fuel_Diesel, fuel_Electric, fuel_LPG, fuel_Petrol  
 - transmission_Manual, transmission_Automatic  
 - seller_type_Individual, seller_type_Trustmark Dealer  
-- owner_Second Owner, owner_Third Owner, owner_Fourth & Above Owner, owner_Test Drive Car  
+- owner_Second Owner, Third Owner, Fourth & Above Owner, Test Drive Car  
 - model_Maruti Swift, Hyundai i20, Hyundai Verna, Honda City, Toyota Innova, Mahindra XUV500, Ford EcoSport, Renault Duster, Other  
 """)
 
-st.markdown("---")
-
-# Inputs
 col1, col2 = st.columns(2)
 
 with col1:
@@ -88,7 +83,6 @@ models = [
 
 selected_model = st.selectbox("Car Model", models)
 
-# 🔥 Prediction Button
 if st.button("Predict Price"):
 
     input_data = pd.DataFrame(
@@ -99,36 +93,29 @@ if st.button("Predict Price"):
     input_data["km_driven"] = km_driven
     input_data["car_age"] = car_age
 
-    # Fuel
     fuel_col = f"fuel_{fuel}"
     if fuel_col in input_data.columns:
         input_data[fuel_col] = 1
 
-    # Seller
     seller_col = f"seller_type_{seller_type}"
     if seller_col in input_data.columns:
         input_data[seller_col] = 1
 
-    # Transmission
     transmission_col = f"transmission_{transmission}"
     if transmission_col in input_data.columns:
         input_data[transmission_col] = 1
 
-    # Owner
     owner_col = f"owner_{owner}"
     if owner_col in input_data.columns:
         input_data[owner_col] = 1
 
-    # Model
     model_col = f"model_{selected_model}"
     if model_col in input_data.columns:
         input_data[model_col] = 1
 
-    # Prediction
     prediction_log = model.predict(input_data)
     prediction = np.expm1(prediction_log)
 
-    # 🔮 UI Output (Premium Card)
     st.markdown("## 🔮 Prediction Result")
 
     st.metric(
