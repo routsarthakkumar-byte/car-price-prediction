@@ -130,6 +130,11 @@ if st.button("Predict Price"):
 
     prediction = np.expm1(prediction_log)
 
-    st.success(
-        f"Estimated Car Price: ₹{prediction[0]:,.0f}"
-    )
+    prediction = np.expm1(prediction_log)
+
+st.markdown("## 🔮 Prediction Result")
+
+st.metric(
+    label="🚗 Estimated Car Price",
+    value=f"₹ {prediction[0]:,.0f}"
+)
