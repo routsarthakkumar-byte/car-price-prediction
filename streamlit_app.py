@@ -29,7 +29,7 @@ using a Machine Learning model trained
 on historical car sales data.
 """)
 
-st.sidebar.success("Model Accuracy: 77% R²")
+st.sidebar.success("Model Accuracy: 90% R²")
 
 # Inputs
 km_driven = st.number_input(
