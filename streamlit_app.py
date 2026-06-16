@@ -32,42 +32,47 @@ on historical car sales data.
 st.sidebar.success("Model Accuracy: 90% R²")
 
 # Inputs
-km_driven = st.number_input(
-    "Kilometers Driven",
-    min_value=0,
-    value=50000
-)
 
-car_age = st.number_input(
-    "Car Age",
-    min_value=0,
-    value=5
-)
+col1, col2 = st.columns(2)
 
-fuel = st.selectbox(
-    "Fuel Type",
-    ["Diesel", "Electric", "LPG", "Petrol"]
-)
+with col1:
+    km_driven = st.number_input(
+        "Kilometers Driven",
+        min_value=0,
+        value=50000
+    )
 
-seller_type = st.selectbox(
-    "Seller Type",
-    ["Individual", "Trustmark Dealer"]
-)
+    fuel = st.selectbox(
+        "Fuel Type",
+        ["Diesel", "Electric", "LPG", "Petrol"]
+    )
 
-transmission = st.selectbox(
-    "Transmission",
-    ["Manual", "Automatic"]
-)
+    transmission = st.selectbox(
+        "Transmission",
+        ["Manual", "Automatic"]
+    )
 
-owner = st.selectbox(
-    "Owner",
-    [
-        "Second Owner",
-        "Third Owner",
-        "Fourth & Above Owner",
-        "Test Drive Car"
-    ]
-)
+with col2:
+    car_age = st.number_input(
+        "Car Age",
+        min_value=0,
+        value=5
+    )
+
+    seller_type = st.selectbox(
+        "Seller Type",
+        ["Individual", "Trustmark Dealer"]
+    )
+
+    owner = st.selectbox(
+        "Owner Type",
+        [
+            "Second Owner",
+            "Third Owner",
+            "Fourth & Above Owner",
+            "Test Drive Car"
+        ]
+    )
 
 models = [
     "Maruti Swift",
