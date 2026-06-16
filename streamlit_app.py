@@ -31,6 +31,15 @@ on historical car sales data.
 
 st.sidebar.success("Model Accuracy: 90% R²")
 
+st.sidebar.success("Features Used:" \
+                    "Kilometres Driven"
+                    "Car Age"
+                    "Seller-Type"
+                    "Owner Type"
+                    "Fuel Type"
+                    "Transmission"
+                    "Car Model")
+
 # Inputs
 col1, col2 = st.columns(2)
 
