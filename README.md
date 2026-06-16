@@ -15,7 +15,7 @@ A Machine Learning web application built using:
 
 ## Model Accuracy
 
-R² Score: ~0.77
+R² Score: ~0.90
 
 ## Live Demo
 
