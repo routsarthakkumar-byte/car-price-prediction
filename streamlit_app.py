@@ -3,11 +3,23 @@ import pandas as pd
 import numpy as np
 import pickle
 
+st.set_page_config(
+    page_title="Car Price Predictor",
+    page_icon="🚗",
+    layout="wide"
+)
+
 # Load model and columns
 model = pickle.load(open("car_price_model.pkl", "rb"))
 model_columns = pickle.load(open("model_columns.pkl", "rb"))
 
-st.title("🚗 Car Price Prediction App")
+st.title("🚗 Car Price Prediction")
+
+st.markdown("""
+Predict the resale value of your car using Machine Learning.
+
+Built with Streamlit and Scikit-Learn.
+""")
 
 # Inputs
 km_driven = st.number_input(
