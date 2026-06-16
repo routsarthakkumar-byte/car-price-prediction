@@ -13,6 +13,7 @@ Machine Learning regression model
 Real-time price prediction
 Interactive Streamlit web app
 Random-Forest Regressor
+
 🛠️ Tech Stack
 Python
 Pandas
@@ -49,13 +50,18 @@ Achieved good accuracy using a Regression-based Machine Learning model trained o
 Home Page
 
 Home Page Screenshot
+<img width="1365" height="641" alt="image" src="https://github.com/user-attachments/assets/b46e32af-8bc2-4926-a0fb-26fd46c5a191" />
+
 
 Prediction Result
+<img width="1365" height="628" alt="image" src="https://github.com/user-attachments/assets/7c597bf8-eb80-4df0-9bb9-2cb61d56be94" />
+
 
 Prediction Output Screenshot
 
 🚀 Future Improvements
 Hyperparameter tuning
 Trying advanced regression models like XGBoost
+
 👨‍💻 Developer
 Sarthak Kumar ROut
